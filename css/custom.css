@@ -7,7 +7,7 @@
 .quick-button>a{
     color: #DBDBDB
 }
-.quick-button>a:hover{
+.quick-button>a:hover,.quick-button>a:visited{
     color: grey;
     text-decoration: none;
 }
@@ -322,6 +322,8 @@ ul>li{
     font-size: 13px;
 }
 .row-centered{
+    display: block;
+    position: absolute;
     margin: auto;
     
 }
