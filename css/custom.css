@@ -204,55 +204,69 @@ ul>li{
 .welcome-screen {
     display: block;
     position: fixed;
+    z-index: 9999;
     height: 100%;
     background: white;
     padding-top: 150px;
     overflow: hidden;
+    top: 0px;
+    right: 0px;
+    left: 0px; 
+    -webkit-transition: height 1s ease-out 0s;
+    -moz-transition: height 1s ease-out 0s;
+    transition: height 1s ease-out 0s;
 }
 
 .welcome-screen>.icons {
     width: 200px;
     height: 200px;
     margin: auto;
+    background: #CC5050;
+    -webkit-transition: opacity 1s linear 0s;
+    -moz-transition: opacity 1s linear 0s;
+    transition: opacity 1s linear 0s;
 }
-
-.item {
-    display: block;
-    position: relative;
-    border-radius: 50%;
+.welcome-screen>.animate {
+    width: 30px;
+    height: 30px;
     margin: auto;
+    border-radius: 50%;
+    border: 4px solid rgba(128, 128, 128, 0.82);
+    border-top-color: rgba(202, 74, 74, 0.99);
+    margin-top:10px;
+    animation: load-screen-animate 1s linear 0s infinite;
+    -o-animation: load-screen-animate 1s linear 0s infinite;
+    -moz-animation: load-screen-animate 1s linear 0s infinite;
+    -webkit-animation: load-screen-animate 1s linear 0s infinite;
 }
-
-.item.one {
-    border: 2px solid rgba(100, 100, 100, 1);
-    background: rgba(100, 100, 100, 1);
-    width: 100%;
-    height: 100%;
+.icons>img{
+    filter: drop-shadow(0px 0px 13px 2px rgba(0, 0, 0, 0.72));
+    -moz-filter: drop-shadow(0px 0px 13px 2px rgba(0, 0, 0, 0.72));
+    -o-filter: drop-shadow(0px 0px 13px 2px rgba(0, 0, 0, 0.72));
+    -webkit-filter: drop-shadow(0px 0px 13px 2px rgba(0, 0, 0, 0.72));
 }
-
-.item.two {
-    border: 2px solid rgba(200, 200, 200, 1);
-    background: rgba(200, 200, 200, 1);
-    width: 70%;
-    height: 70%;
-    top: -170px;
+.remove-loader{
+    padding-top: 0px;
+    height: 0px;
 }
-
-.item.three {
+.remove-loader>.icons,.remove-loader>.animate{
     opacity: 0;
-    width: 50%;
-    height: 50%;
-    top: -290px;
+}
+.remove-loader>.animate{
+    animation: load-screen-animate 1s linear 0s 0;
+    -o-animation: load-screen-animate 1s linear 0s 0;
+    -moz-animation: load-screen-animate 1s linear 0s 0;
+    -webkit-animation: load-screen-animate 1s linear 0s 0;
 }
 
-@keyframes load-welcome {
+@keyframes load-screen-animate {
     from {
-        -webkit-transform: scale(1, 1);
-        transform: scale(1.2, 1.2);
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        -webkit-transform: scale(1, 1);
-        transform: scale(1, 1);
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 

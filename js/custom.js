@@ -1,3 +1,4 @@
+$("#loader").addClass("welcome-screen");
 $(document).ready(function () {
     $('[data-toggle="tooltip"]').tooltip();
     jQuery.fn.extend({
@@ -135,9 +136,6 @@ $(document).ready(function () {
     /*-----Welcome Screen Animate---*/
     //***$("#item-one").velocity({scale:1.3},{loop:true, duration: "slow"});
 });
-/*$(window).load(function(){
-    $("#item-one").velocity("stop")
-    .velocity({opacity:0});
-    $("#item-three").velocity({opacity:1},{duration:1000});
-    $(".welcome-screen").velocity({height:"0%",paddingTop:"0px"},{delay:2000});
-})*/
+$(window).load(function(){
+    $('.welcome-screen').addClass('remove-loader');
+})
